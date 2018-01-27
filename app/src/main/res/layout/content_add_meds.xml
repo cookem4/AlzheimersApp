@@ -24,10 +24,10 @@
         android:layout_weight="0.5"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="35dp">
+        tools:layout_editor_absoluteY="16dp">
 
         <EditText
-            android:id="@+id/username"
+            android:id="@+id/medname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
@@ -37,7 +37,7 @@
     </LinearLayout>
 
     <CheckBox
-        android:id="@+id/checkbox_meat"
+        android:id="@+id/checkbox_mon"
         android:layout_width="142dp"
         android:layout_height="wrap_content"
         android:onClick="onCheckboxClicked"
@@ -46,20 +46,69 @@
         tools:layout_editor_absoluteY="257dp" />
 
     <CheckBox
-        android:id="@+id/checkbox_cheese"
+        android:id="@+id/checkbox_tues"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="onCheckboxClicked"
         android:text="Monday"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="203dp" />
+
     <CheckBox
-        android:id="@+id/checkbox_cheese"
+        android:id="@+id/checkbox_wed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="onCheckboxClicked"
-        android:text="Monday"
+        android:text="Wednesday"
         tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="306dp" />
+
+    <CheckBox
+        android:id="@+id/checkbox_thurs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onCheckboxClicked"
+        android:text="Thursday"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="352dp" />
+
+    <CheckBox
+        android:id="@+id/checkbox_fri"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onCheckboxClicked"
+        android:text="Friday"
+        tools:layout_editor_absoluteX="210dp"
         tools:layout_editor_absoluteY="203dp" />
+
+    <CheckBox
+        android:id="@+id/checkbox_sat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onCheckboxClicked"
+        android:text="Saturday"
+        tools:layout_editor_absoluteX="210dp"
+        tools:layout_editor_absoluteY="257dp" />
+
+    <CheckBox
+        android:id="@+id/checkbox_sun"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onCheckboxClicked"
+        android:text="Sunday"
+        tools:layout_editor_absoluteX="210dp"
+        tools:layout_editor_absoluteY="306dp" />
+
+
+    <EditText
+        android:id="@+id/time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:text="Medication Time"
+        android:visibility="visible"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="421dp" />
+
 
 </android.support.constraint.ConstraintLayout>

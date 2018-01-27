@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">AlzheimersApp</string>
     <string name="title_activity_add_meds">AddMeds</string>
+    <string name="title_activity_med_list">MedList</string>
 </resources>
