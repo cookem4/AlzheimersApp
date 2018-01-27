@@ -23,7 +23,11 @@
         <activity
             android:name=".MedList"
             android:label="@string/title_activity_med_list"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Medtaken"
+            android:label="Medtaken"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>
