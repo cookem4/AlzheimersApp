@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.mitch.alzheimersapp.MainActivity">
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="200"
+        android:layout_height="75"
+        android:text="View Medications"
+        tools:layout_editor_absoluteX="92dp"
+        tools:layout_editor_absoluteY="115dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="200"
+        android:layout_height="75"
+        android:text="Add Medications"
+        tools:layout_editor_absoluteX="89dp"
+        tools:layout_editor_absoluteY="269dp" />
+
+</android.support.constraint.ConstraintLayout>
