@@ -11,6 +11,7 @@
         android:layout_width="200dp"
         android:layout_height="75dp"
         android:text="View Medications"
+        android:visibility="visible"
         tools:layout_editor_absoluteX="92dp"
         tools:layout_editor_absoluteY="115dp" />
 
@@ -19,6 +20,7 @@
         android:layout_width="200dp"
         android:layout_height="75dp"
         android:text="Add Medications"
+        android:visibility="visible"
         tools:layout_editor_absoluteX="92dp"
         tools:layout_editor_absoluteY="287dp" />
 
