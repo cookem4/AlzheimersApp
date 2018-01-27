@@ -49,24 +49,24 @@ public class AddMeds extends AppCompatActivity {
 
         MedInfo medData = new MedInfo(dateMap, medName, medTime);
     }
-    public class MedInfo{
-        String medTime;
-        String medName;
-        Map<String, Boolean> dateMap = new HashMap<String, Boolean>();
+}
+class MedInfo{
+    String medTime;
+    String medName;
+    Map<String, Boolean> dateMap = new HashMap<String, Boolean>();
 
-        public MedInfo(Map dateMap, String medName, String medTime){
-            this.medName = medName;
-            this.medTime = medTime;
-            this.dateMap = dateMap;
-        }
-        public Map getDates(){
-            return this.dateMap;
-        }
-        public String getMedName(){
-            return this.medName;
-        }
-        public String getMedTime(){
-            return this.medTime;
-        }
+    public MedInfo(Map dateMap, String medName, String medTime){
+        this.medName = medName;
+        this.medTime = medTime;
+        this.dateMap = dateMap;
+    }
+    public Map getDates(){
+        return this.dateMap;
+    }
+    public String getMedName(){
+        return this.medName;
+    }
+    public String getMedTime(){
+        return this.medTime;
     }
 }
