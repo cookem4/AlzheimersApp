@@ -6,109 +6,129 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.mitch.alzheimersapp.AddMeds"
+    tools:layout_editor_absoluteY="25dp"
     tools:showIn="@layout/activity_add_meds">
+
+    <EditText
+
+        android:id="@+id/edittext_medname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="53dp"
+        android:inputType="textEmailAddress"
+        android:text="Medication Name"
+        android:textAlignment="center"
+        android:visibility="visible"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="277dp"
-        android:layout_height="62dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="170dp"
         android:text="Select Days Medication is Taken:"
+        android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:visibility="visible"
-        tools:layout_editor_absoluteX="54dp"
-        tools:layout_editor_absoluteY="114dp" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.5"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="16dp">
-
-        <EditText
-            android:id="@+id/edittext_medname"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
-            android:text="Medication Name"
-            android:visibility="visible" />
-
-    </LinearLayout>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
         android:id="@+id/checkbox_tues"
-        android:layout_width="142dp"
+        android:layout_width="110dp"
         android:layout_height="wrap_content"
-        android:onClick="onCheckboxClicked"
+        android:layout_marginEnd="64dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="32dp"
         android:text="Tuesday"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="257dp" />
+        app:layout_constraintEnd_toStartOf="@+id/checkbox_sat"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkbox_mon" />
 
     <CheckBox
         android:id="@+id/checkbox_mon"
-        android:layout_width="wrap_content"
+        android:layout_width="110dp"
         android:layout_height="wrap_content"
-        android:onClick="onCheckboxClicked"
+        android:layout_marginEnd="64dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="32dp"
         android:text="Monday"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="203dp" />
+        app:layout_constraintEnd_toStartOf="@+id/checkbox_fri"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <CheckBox
         android:id="@+id/checkbox_wed"
-        android:layout_width="wrap_content"
+        android:layout_width="110dp"
         android:layout_height="wrap_content"
-        android:onClick="onCheckboxClicked"
+        android:layout_marginEnd="64dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="32dp"
         android:text="Wednesday"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="306dp" />
+        app:layout_constraintEnd_toStartOf="@+id/checkbox_sun"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkbox_tues" />
 
     <CheckBox
         android:id="@+id/checkbox_thurs"
-        android:layout_width="wrap_content"
+        android:layout_width="110dp"
         android:layout_height="wrap_content"
-        android:onClick="onCheckboxClicked"
+        android:layout_marginTop="32dp"
         android:text="Thursday"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="352dp" />
+        app:layout_constraintEnd_toEndOf="@+id/checkbox_wed"
+        app:layout_constraintStart_toStartOf="@+id/checkbox_wed"
+        app:layout_constraintTop_toBottomOf="@+id/checkbox_wed" />
 
     <CheckBox
         android:id="@+id/checkbox_fri"
-        android:layout_width="wrap_content"
+        android:layout_width="110dp"
         android:layout_height="wrap_content"
-        android:onClick="onCheckboxClicked"
+        android:layout_marginEnd="63dp"
+        android:layout_marginTop="32dp"
         android:text="Friday"
-        tools:layout_editor_absoluteX="210dp"
-        tools:layout_editor_absoluteY="203dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/checkbox_mon"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <CheckBox
         android:id="@+id/checkbox_sat"
-        android:layout_width="wrap_content"
+        android:layout_width="110dp"
         android:layout_height="wrap_content"
-        android:onClick="onCheckboxClicked"
+        android:layout_marginEnd="63dp"
+        android:layout_marginTop="32dp"
         android:text="Saturday"
-        tools:layout_editor_absoluteX="210dp"
-        tools:layout_editor_absoluteY="257dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/checkbox_tues"
+        app:layout_constraintTop_toBottomOf="@+id/checkbox_fri" />
 
     <CheckBox
         android:id="@+id/checkbox_sun"
-        android:layout_width="wrap_content"
+        android:layout_width="110dp"
         android:layout_height="wrap_content"
-        android:onClick="onCheckboxClicked"
+        android:layout_marginEnd="63dp"
+        android:layout_marginTop="32dp"
         android:text="Sunday"
-        tools:layout_editor_absoluteX="210dp"
-        tools:layout_editor_absoluteY="306dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/checkbox_wed"
+        app:layout_constraintTop_toBottomOf="@+id/checkbox_sat" />
 
 
     <EditText
         android:id="@+id/edittext_medtime"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="77dp"
+        android:layout_marginTop="81dp"
         android:inputType="textEmailAddress"
         android:text="Medication Time"
+        android:textAlignment="center"
         android:visibility="visible"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="421dp" />
-
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkbox_thurs" />
 
 </android.support.constraint.ConstraintLayout>
