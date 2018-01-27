@@ -27,7 +27,7 @@
         tools:layout_editor_absoluteY="16dp">
 
         <EditText
-            android:id="@+id/medname"
+            android:id="@+id/edittext_medname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
@@ -37,7 +37,7 @@
     </LinearLayout>
 
     <CheckBox
-        android:id="@+id/checkbox_mon"
+        android:id="@+id/checkbox_tues"
         android:layout_width="142dp"
         android:layout_height="wrap_content"
         android:onClick="onCheckboxClicked"
@@ -46,7 +46,7 @@
         tools:layout_editor_absoluteY="257dp" />
 
     <CheckBox
-        android:id="@+id/checkbox_tues"
+        android:id="@+id/checkbox_mon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="onCheckboxClicked"
@@ -101,7 +101,7 @@
 
 
     <EditText
-        android:id="@+id/time"
+        android:id="@+id/edittext_medtime"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
