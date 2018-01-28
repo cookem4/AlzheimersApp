@@ -1,5 +1,6 @@
 package com.example.mitch.alzheimersapp;
 
+import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.telephony.SmsManager;
@@ -33,34 +34,15 @@ class ContactCareGiver{
 
 
 class MedTimer {
-    static final int delay = 1000; //These control how long the timer runs
-    static final int period = 1000; //Presumably in milliseconds
-    static int interval;
-    static Timer timer;
-
     MedTimer() {
-        start();
-    }
+        CountDownTimer c = new CountDownTimer(900000, 1000) {
 
-    static void start() {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Input seconds => : ");
-        String secs = sc.nextLine();
-        timer = new Timer();
-        interval = Integer.parseInt(secs);
-        System.out.println(secs);
-        timer.scheduleAtFixedRate(new TimerTask() {
-            public void run() {
-                setInterval();
+            public void onTick(long millisUntilFinished) {
             }
-        }, delay, period);
-    }
 
-    static final int setInterval() {
-        if (interval == 1) {
-            timer.cancel();
-            ContactCareGiver callPerson = new ContactCareGiver(); //Calls class that will contact caregiver
-        }
-        return interval--;
+            public void onFinish() {
+                ContactCareGiver callPerson = new ContactCareGiver(); //Calls class that will contact caregiver
+            }
+        }.start();
     }
 }
