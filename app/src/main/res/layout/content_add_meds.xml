@@ -27,12 +27,13 @@
         android:id="@+id/textView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="170dp"
+        android:layout_marginTop="124dp"
         android:text="Select Days Medication is Taken:"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -120,15 +121,27 @@
         android:id="@+id/edittext_medtime"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="77dp"
-        android:layout_marginTop="81dp"
+        android:layout_marginTop="44dp"
         android:inputType="textEmailAddress"
         android:text="Medication Time"
         android:textAlignment="center"
         android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkbox_thurs" />
+
+
+    <Button
+        android:id="@+id/addmedication"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Add Contact"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkbox_thurs" />
+        app:layout_constraintTop_toBottomOf="@id/edittext_medtime"
+        app:layout_constraintVertical_bias="0.604" />
 
 </android.support.constraint.ConstraintLayout>

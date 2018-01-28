@@ -1,10 +1,9 @@
 package com.example.mitch.alzheimersapp;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -17,10 +16,16 @@ public class AddMeds extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        Log.v("AddMeds", "Created");
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_meds);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+
+        addSubmitButtonBehaviour();
 
         Map<String, Boolean> dateMap = new HashMap<String, Boolean>();
         String medName = "";
@@ -48,6 +53,19 @@ public class AddMeds extends AppCompatActivity {
         dateMap.put("sun", CSun.isChecked());
 
         MedInfo medData = new MedInfo(dateMap, medName, medTime);
+
+    }
+
+    private void addSubmitButtonBehaviour() {
+        Button addmedicationBtn = (Button) findViewById(R.id.addmedication);
+
+        addmedicationBtn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Code here executes on main thread after user presses button
+                Log.v("CLICKED", "Add Medication");
+                finish();
+            }
+        });
     }
 }
 class MedInfo{
