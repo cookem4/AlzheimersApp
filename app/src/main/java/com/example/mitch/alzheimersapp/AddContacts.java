@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import java.util.List;
+
 public class AddContacts extends AppCompatActivity {
 
     @Override
@@ -47,10 +49,13 @@ public class AddContacts extends AppCompatActivity {
             ContactCareGiver c = new ContactCareGiver(name,phone,message);
 
             try {
-                new LongOperation().execute(c);
+                Log.v("try", "Before execute");
+
+                new LongOperation().execute(c).get();
+                Log.v("try", "After execute");
             }
             catch (Exception e) {
-                Log.v("ERROR", e.getMessage());
+                Log.v("catch", e.getMessage());
             }
 
 
@@ -67,7 +72,16 @@ public class AddContacts extends AppCompatActivity {
 
             db.addCareGiver(cg[0]);
 //            db.getCareGiver(0).getName();
-            Log.v("NAME", db.getCareGiver(0).getName());
+            Log.v("NAME", db.getCareGiver(1).getName());
+            Log.v("NUMBER", db.getCareGiver(1).getPhoneNumber());
+//            Log.v("NAME", db.getCareGiver(1).getName());
+            Log.v("COUNT", "" +  db.getCareGiversCount());
+
+            List<ContactCareGiver> list = db.getAllCareGivers();
+            ContactCareGiver cg2 = list.get(list.size() - 1);
+            Log.v("LAST ADDED NAME", cg2.getName());
+            Log.v("LAST ADDED Number", cg2.getPhoneNumber());
+            Log.v("LAST ADDED Message", cg2.getMessage());
             return "Executed";
         }
 

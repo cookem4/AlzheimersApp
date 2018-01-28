@@ -105,7 +105,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor cursor = db.query(TABLE_CAREGIVER_CONTACTS, new String[] {KEY_CG_ID,
-                        KEY_CG_NAME, KEY_PH_NO }, KEY_CG_ID + "=?",
+                        KEY_CG_NAME, KEY_PH_NO, KEY_MESSAGE }, KEY_CG_ID + "=?",
                 new String[] { String.valueOf(id) }, null, null, null, null);
         if (cursor != null)
             cursor.moveToFirst();
@@ -138,6 +138,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         return careGiversList;
     }
 
+
+    // TODO: Add Update, Delete Functionality
 //    // Updating single contact
 //    public int updateContact(Contact contact) {
 //        SQLiteDatabase db = this.getWritableDatabase();
@@ -162,13 +164,16 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     // Getting contacts Count
     public int getCareGiversCount() {
+        int count = -1;
         String countQuery = "SELECT  * FROM " + TABLE_CAREGIVER_CONTACTS;
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(countQuery, null);
-        cursor.close();
+        if (cursor != null) {
+            count = cursor.getCount();
+            cursor.close();
+        }
 
-        // return count
-        return cursor.getCount();
+        return count;
     }
 
 
@@ -260,6 +265,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         return medicationsist;
     }
 
+
+        // TODO: Add Update, Delete Functionality
 //    // Updating single contact
 //    public int updateContact(Contact contact) {
 //        SQLiteDatabase db = this.getWritableDatabase();
@@ -284,13 +291,16 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     // Getting contacts Count
     public int getMedicationsCount() {
+        int count = -1;
         String countQuery = "SELECT  * FROM " + TABLE_MEDICATIONS;
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(countQuery, null);
-        cursor.close();
+        if (cursor != null) {
+            count = cursor.getCount();
+            cursor.close();
+        }
 
-        // return count
-        return cursor.getCount();
+        return count;
     }
 
 }
