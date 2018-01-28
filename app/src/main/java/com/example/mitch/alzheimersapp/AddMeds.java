@@ -68,7 +68,7 @@ public class AddMeds extends AppCompatActivity {
         });
     }
 }
-class MedInfo{
+class MedInfo {
     String medTime;
     String medName;
     Map<String, Boolean> dateMap = new HashMap<String, Boolean>();
@@ -78,13 +78,11 @@ class MedInfo{
         this.medTime = medTime;
         this.dateMap = dateMap;
     }
-    public Map getDates(){
-        return this.dateMap;
-    }
-    public String getMedName(){
+    public Map getDates(){ return this.dateMap; }
+    public String getName(){
         return this.medName;
     }
-    public String getMedTime(){
+    public String getTime(){
         return this.medTime;
     }
 }
