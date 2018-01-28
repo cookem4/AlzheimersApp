@@ -114,5 +114,15 @@ public class MainActivity extends AppCompatActivity {
                 MainActivity.this.startActivity(myIntent);
             }
         });
+
+        final Button demoBtn = (Button) findViewById(R.id.demolaunch);
+        demoBtn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Code here executes on main thread after user presses button
+                Log.v("CLICKED", "Add Contact");
+                Intent myIntent = new Intent(MainActivity.this, MedTaken.class);
+                MainActivity.this.startActivity(myIntent);
+            }
+        });
     }
 }
