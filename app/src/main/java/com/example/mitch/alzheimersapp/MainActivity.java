@@ -1,13 +1,13 @@
 package com.example.mitch.alzheimersapp;
 
+import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.content.Intent;
-import android.Manifest;
-import android.support.v4.app.ActivityCompat;
 import android.view.View;
 import android.widget.Button;
 
@@ -75,11 +75,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void addButtonBehavior() {
-        final Button viewmedicationsBtn = findViewById(R.id.viewmedications);
-        viewmedicationsBtn.setOnClickListener(new View.OnClickListener() {
+        final Button addmedicationsBtn = (Button) findViewById(R.id.addmedications);
+        addmedicationsBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Code here executes on main thread after user presses button
-                Log.v("CLICKED", "View Medications");
+                Log.v("CLICKED", "Add Medications");
                 Intent myIntent = new Intent(MainActivity.this, AddMeds.class);
                 MainActivity.this.startActivity(myIntent);
             }
