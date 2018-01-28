@@ -1,12 +1,10 @@
 package com.example.mitch.alzheimersapp;
 
 import android.os.Bundle;
-
-import android.os.Message;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
 public class AddContacts extends AppCompatActivity {
@@ -16,6 +14,7 @@ public class AddContacts extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_contacts);
 
+        addSubmitButtonBehaviour();
 
         String name;
         String phone;
@@ -32,6 +31,19 @@ public class AddContacts extends AppCompatActivity {
 
         Contact c = new Contact(name,phone,message);
 
+    }
+
+
+    private void addSubmitButtonBehaviour() {
+        Button addmedicationBtn = (Button) findViewById(R.id.addcontact);
+
+        addmedicationBtn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Code here executes on main thread after user presses button
+                Log.v("CLICKED", "Add Medication");
+                finish();
+            }
+        });
     }
 
 }

@@ -75,12 +75,35 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void addButtonBehavior() {
+        // Open View Medication Activity
+        final Button viewmedicationsBtn = (Button) findViewById(R.id.viewmedications);
+        viewmedicationsBtn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Code here executes on main thread after user presses button
+                Log.v("CLICKED", "View Medications");
+                Intent myIntent = new Intent(MainActivity.this, MedList.class);
+                MainActivity.this.startActivity(myIntent);
+            }
+        });
+
+        // Open Add Medication Activity
         final Button addmedicationsBtn = (Button) findViewById(R.id.addmedications);
         addmedicationsBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Code here executes on main thread after user presses button
                 Log.v("CLICKED", "Add Medications");
                 Intent myIntent = new Intent(MainActivity.this, AddMeds.class);
+                MainActivity.this.startActivity(myIntent);
+            }
+        });
+
+        // Open Add Contact Activity
+        final Button addcontactBtn = (Button) findViewById(R.id.addcontact);
+        addcontactBtn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Code here executes on main thread after user presses button
+                Log.v("CLICKED", "Add Contact");
+                Intent myIntent = new Intent(MainActivity.this, AddContacts.class);
                 MainActivity.this.startActivity(myIntent);
             }
         });
