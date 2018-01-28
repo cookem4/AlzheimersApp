@@ -8,10 +8,27 @@
     tools:context="com.example.mitch.alzheimersapp.MedList"
     tools:showIn="@layout/activity_med_list">
 
+
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/textView2"
+        android:layout_width="368dp"
+        android:layout_height="wrap_content"
+        android:text="Medications"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toTopOf="@+id/medList"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
     <ListView
         android:id="@+id/medList"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </ListView>
+        android:layout_width="368dp"
+        android:layout_height="480dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"></ListView>
 
 </android.support.constraint.ConstraintLayout>

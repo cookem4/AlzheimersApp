@@ -3,7 +3,6 @@ package com.example.mitch.alzheimersapp;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -23,14 +22,8 @@ public class AddMeds extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_meds);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
 
         addSubmitButtonBehaviour();
-
-
-
     }
 
     private void addSubmitButtonBehaviour() {
