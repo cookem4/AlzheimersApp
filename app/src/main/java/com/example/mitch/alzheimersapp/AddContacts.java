@@ -51,7 +51,7 @@ public class AddContacts extends AppCompatActivity {
             try {
                 Log.v("try", "Before execute");
 
-                new LongOperation().execute(c).get();
+                new SubmitAddCareGiverForm().execute(c).get();
                 Log.v("try", "After execute");
             }
             catch (Exception e) {
@@ -64,7 +64,7 @@ public class AddContacts extends AppCompatActivity {
         });
     }
 
-    private class LongOperation extends AsyncTask<ContactCareGiver, Void, String> {
+    private class SubmitAddCareGiverForm extends AsyncTask<ContactCareGiver, Void, String> {
 
         @Override
         protected String doInBackground(ContactCareGiver... cg) {
@@ -100,6 +100,9 @@ public class AddContacts extends AppCompatActivity {
     }
 
 }
+
+
+// WTF is this for?
 //class Contact{
 //    private String name;
 //    private String phone;

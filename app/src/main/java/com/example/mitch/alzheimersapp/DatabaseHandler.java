@@ -181,13 +181,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
      * All CRUD(Create, Read, Update, Delete) Operations for Medications
      */
 
-
-//    TABLE_MEDICATIONS + "("
-//            + KEY_M_ID  + KEY_M_NAME +
-//            + KEY_TIME + KEY_MON + + KEY_TUES +
-//            + KEY_WED +  + KEY_THURS +  + KEY_FRI
-//            + KEY_SAT  + KEY_SUN
-
     // Adding new contact
     void addMedication(MedInfo medInfo) {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -197,13 +190,13 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         values.put(KEY_TIME, medInfo.getTime()); // Medication Time
 
         Map<String, Boolean> dateMap = medInfo.getDates();
-        values.put(KEY_MON, dateMap.get("mon"));
-        values.put(KEY_TUES, dateMap.get("tues"));
-        values.put(KEY_WED, dateMap.get("wed"));
-        values.put(KEY_THURS, dateMap.get("thurs"));
-        values.put(KEY_FRI, dateMap.get("fri"));
-        values.put(KEY_SAT, dateMap.get("sat"));
-        values.put(KEY_SUN, dateMap.get("sun"));
+        values.put(KEY_MON, dateMap.get("mon").toString());
+        values.put(KEY_TUES, dateMap.get("tues").toString());
+        values.put(KEY_WED, dateMap.get("wed").toString());
+        values.put(KEY_THURS, dateMap.get("thurs").toString());
+        values.put(KEY_FRI, dateMap.get("fri").toString());
+        values.put(KEY_SAT, dateMap.get("sat").toString());
+        values.put(KEY_SUN, dateMap.get("sun").toString());
 
         // Inserting Row
         db.insert(TABLE_MEDICATIONS, null, values);
@@ -247,13 +240,13 @@ public class DatabaseHandler extends SQLiteOpenHelper {
             do {
 
                 Map<String, Boolean> dateMap = new HashMap<String, Boolean>();
-                dateMap.put(KEY_MON, dateMap.get(cursor.getString(3)));
-                dateMap.put(KEY_TUES, dateMap.get(cursor.getString(4)));
-                dateMap.put(KEY_WED, dateMap.get(cursor.getString(5)));
-                dateMap.put(KEY_THURS, dateMap.get(cursor.getString(6)));
-                dateMap.put(KEY_FRI, dateMap.get(cursor.getString(7)));
-                dateMap.put(KEY_SAT, dateMap.get(cursor.getString(8)));
-                dateMap.put(KEY_SUN, dateMap.get(cursor.getString(9)));
+                dateMap.put("mon", cursor.getString(3).equalsIgnoreCase("true"));
+                dateMap.put("tues", cursor.getString(4).equalsIgnoreCase("true"));
+                dateMap.put("wed", cursor.getString(5).equalsIgnoreCase("true"));
+                dateMap.put("thurs", cursor.getString(6).equalsIgnoreCase("true"));
+                dateMap.put("fri", cursor.getString(7).equalsIgnoreCase("true"));
+                dateMap.put("sat", cursor.getString(8).equalsIgnoreCase("true"));
+                dateMap.put("sun", cursor.getString(9).equalsIgnoreCase("true"));
 
                 MedInfo medInfo = new MedInfo(dateMap, cursor.getString(1), cursor.getString(2));
 
