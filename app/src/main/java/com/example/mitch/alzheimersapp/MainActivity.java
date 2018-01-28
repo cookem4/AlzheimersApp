@@ -3,7 +3,12 @@ package com.example.mitch.alzheimersapp;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.media.MediaPlayer;
+import android.media.Ringtone;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -39,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
         Log.v("MainActivity", "OnCreate");
 
         // Here, thisActivity is the current activity
@@ -104,6 +111,16 @@ public class MainActivity extends AppCompatActivity {
                 // Code here executes on main thread after user presses button
                 Log.v("CLICKED", "Add Contact");
                 Intent myIntent = new Intent(MainActivity.this, AddContacts.class);
+                MainActivity.this.startActivity(myIntent);
+            }
+        });
+
+        final Button demoBtn = (Button) findViewById(R.id.demolaunch);
+        demoBtn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Code here executes on main thread after user presses button
+                Log.v("CLICKED", "Add Contact");
+                Intent myIntent = new Intent(MainActivity.this, MedTaken.class);
                 MainActivity.this.startActivity(myIntent);
             }
         });
