@@ -1,6 +1,7 @@
 package com.example.mitch.alzheimersapp;
 
 
+import android.icu.text.IDNA;
 import android.media.MediaPlayer;
 import android.media.RingtoneManager;
 import android.net.Uri;
@@ -8,11 +9,14 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.provider.MediaStore;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.telephony.SmsManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import java.util.List;
 
@@ -27,6 +31,7 @@ public class MedTaken extends AppCompatActivity {
 
 
         setContentView(R.layout.activity_med_taken);
+
         ContactCareGiver cg = null;
         try {
             // do stuff
@@ -36,6 +41,22 @@ public class MedTaken extends AppCompatActivity {
         catch (Exception e) {
             // handle exceptions
         }
+        MedInfo cg2 = null;
+        try{
+            cg2 = new RetriveLastMedName().execute().get();
+
+        }
+        catch (Exception e){
+
+        }
+
+        TextView textView;
+        AlertDialog alertDialog;
+        EditText editText;
+
+        textView = (TextView) findViewById(R.id.medicationName);
+        textView.setText(cg2.getName());
+
         MedTimer countdown = new MedTimer(mp, cg);
 
         buttonPress(mp);
@@ -52,7 +73,6 @@ public class MedTaken extends AppCompatActivity {
     }
 
     private class RetriveLastContact extends AsyncTask<ContactCareGiver, Void, ContactCareGiver> {
-
         @Override
         protected ContactCareGiver doInBackground(ContactCareGiver... cg) {
             final DatabaseHandler db = new DatabaseHandler(MedTaken.this);
@@ -68,13 +88,22 @@ public class MedTaken extends AppCompatActivity {
             return cg2;
         }
 
-
-
         @Override
         protected void onPreExecute() {}
 
         @Override
         protected void onProgressUpdate(Void... values) {}
+    }
+    private class RetriveLastMedName extends AsyncTask<MedInfo, Void, MedInfo>{
+        @Override
+        protected MedInfo doInBackground(MedInfo... cg){
+            final DatabaseHandler db = new DatabaseHandler(MedTaken.this);
+            Log.v("NAME", db.getMedication(1).getName());
+            List<MedInfo> list = db.getAllMedications();
+            MedInfo cg2 = list.get(list.size()-1);
+            Log.v("LAST ADDED MED NAME", cg2.getName());
+            return cg2;
+        }
     }
 
 }
@@ -107,7 +136,7 @@ class ContactCareGiver {
 
 class MedTimer {
     MedTimer(final MediaPlayer mp, final ContactCareGiver cg) {
-        CountDownTimer c = new CountDownTimer(3000, 1000) {
+        CountDownTimer c = new CountDownTimer(10000, 1000) {
             public void onTick(long millisUntilFinished) {
             }
 
