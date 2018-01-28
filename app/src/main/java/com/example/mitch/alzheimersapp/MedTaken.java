@@ -68,6 +68,7 @@ public class MedTaken extends AppCompatActivity {
             public void onClick(View v) {
                 // Code here executes on main thread after user presses button
                 mp.stop();
+                finish();
             }
         });
     }
@@ -145,7 +146,9 @@ class MedTimer {
                 String tempMsg;
 
                 ContactCareGiver callPerson = new ContactCareGiver("tempName",cg.getPhoneNumber(), cg.getMessage()); //Calls class that will contact caregiver
-                callPerson.sendSMS();
+                if (mp.isPlaying()) {
+                    callPerson.sendSMS();
+                }
                 mp.stop();
             }
         }.start();
